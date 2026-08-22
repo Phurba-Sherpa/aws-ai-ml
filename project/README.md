@@ -9,8 +9,7 @@
 - **Classifier Prompt Configuration:**  
   ![Classifier Prompt Configuration](classifier-prompt-config.png)
 - **Condition Node Expressions:**  
-  *(Note: See the `bedrock-flow.png` and `classifier-prompt-config.png` for routing logic. If required, add a specific screenshot named `condition-expressions.png` here.)*
-  ![Condition Node Expressions](condition-expressions.png)
+  ![Condition Node Expressions](condition-node-config.png)
 
 ### Underlying Code Configuration (Agentcore)
 *The routing, classification, and tools are also defined and tested programmatically.*
