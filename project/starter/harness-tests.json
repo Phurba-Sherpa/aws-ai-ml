@@ -1,0 +1,79 @@
+{
+  "tests": [
+    {
+      "id": "bug-001",
+      "prompt": "The checkout page crashes every time I try to apply a promo code. I'm on Chrome, order was for a pair of running shoes.",
+      "expected": "Agent recognizes this as a bug report, asks any missing clarifying details needed (e.g. steps to reproduce, device/browser, order number if relevant), and once enough detail is gathered calls create_bug_report to file a ticket. Does not answer from the FAQ."
+    },
+    {
+      "id": "bug-002",
+      "prompt": "The 'Notify me' button on out-of-stock product pages just spins forever and never actually signs me up for restock alerts.",
+      "expected": "Agent recognizes this as a broken feature, asks any needed clarifying details (e.g. which product, browser/device, does an error appear), and once enough detail is gathered calls create_bug_report. Does not treat this as an FAQ lookup."
+    },
+    {
+      "id": "bug-003",
+      "prompt": "Every time I click 'Add to Cart' on any product page, the page just goes blank and I have to refresh. This has been happening all day.",
+      "expected": "Agent recognizes this as a bug report (no FAQ entry covers a broken add-to-cart button), asks any needed clarifying details (device/browser, does an error message appear, does it happen on every product), and once enough detail is gathered calls create_bug_report."
+    },
+    {
+      "id": "bug-004",
+      "prompt": "Every time I try to update my shipping address in Account Settings, the save button does nothing and the page just refreshes with my old address still there.",
+      "expected": "Agent treats this as a bug report (not the normal FAQ #27 'how do I update my address' flow, since the feature itself is broken), collects reproduction details (browser, steps, whether error appears), and calls create_bug_report."
+    },
+    {
+      "id": "bug-005",
+      "prompt": "This is the third time I'm telling you: the return label PDF you emailed me is corrupted and won't open in any app I try.",
+      "expected": "Agent acknowledges the repeated frustration, gathers necessary details (order number, when the label was requested, device/app tried), and files a bug report with create_bug_report rather than just resending generic instructions."
+    },
+    {
+      "id": "faq-001",
+      "prompt": "Do I need to make an account before I can buy something?",
+      "expected": "Agent answers directly from FAQ #1: no account is required, guest checkout is available, and creating an account offers benefits like order tracking and saved addresses. No tool call needed."
+    },
+    {
+      "id": "faq-002",
+      "prompt": "How long will it take for my order to arrive after I place it?",
+      "expected": "Agent answers from FAQ #8: delivery estimates are shown at checkout and in the shipping confirmation email, and processing typically takes 1-2 business days before dispatch. No tool call needed."
+    },
+    {
+      "id": "faq-003",
+      "prompt": "I want to return a jacket I ordered two weeks ago because I changed my mind, who pays for shipping?",
+      "expected": "Agent answers from FAQ #11 and #13: item is within the 30-day return window if unused/original packaging, and since it's a change-of-mind return, return shipping cost may be deducted from the refund where allowed."
+    },
+    {
+      "id": "faq-004",
+      "prompt": "My card got declined at checkout, why would that happen?",
+      "expected": "Agent answers from FAQ #20: lists common causes (incorrect billing details, insufficient funds, bank security checks, international/online purchase limits) and suggests retrying, using a different method, or contacting the bank."
+    },
+    {
+      "id": "faq-005",
+      "prompt": "How do you use the personal information I give you when I order something?",
+      "expected": "Agent answers from FAQ #31: data is used to process orders, provide support, prevent fraud, and improve services, and personal information is not sold. No tool call needed."
+    },
+    {
+      "id": "other-001",
+      "prompt": "I want to delete my account and all my data permanently, can you do that right now?",
+      "expected": "Agent recognizes this falls outside both bug reports and the FAQ's scope of action (FAQ #28/#32 only describe contacting support), and politely redirects the customer to the human support phone line rather than attempting to process the deletion itself or calling create_bug_report."
+    },
+    {
+      "id": "other-002",
+      "prompt": "I'm not going to explain this over chat, just connect me to a real person right now.",
+      "expected": "Agent does not argue or keep probing for details; it politely acknowledges the request and redirects the customer to the human support phone line."
+    },
+    {
+      "id": "other-003",
+      "prompt": "Can you give me a discount code for my birthday this month?",
+      "expected": "Agent recognizes this is neither a bug nor something answerable from the FAQ, and politely redirects the customer to the human support phone line rather than inventing a promo code."
+    },
+    {
+      "id": "other-004",
+      "prompt": "What's the weather like today, and also can you recommend a good movie?",
+      "expected": "Agent recognizes this is unrelated to bug reports or the shop's FAQ, and politely redirects the customer to the human support phone line (or declines and clarifies it can only help with order/shipping/returns questions or bug reports) instead of attempting to answer off-topic questions."
+    },
+    {
+      "id": "other-005",
+      "prompt": "I want to file a complaint about how a support employee spoke to me on the phone yesterday.",
+      "expected": "Agent identifies this as an HR/personnel complaint, not a bug or FAQ topic, and politely redirects the customer to the human support phone line rather than filing a bug report or fabricating an FAQ answer."
+    }
+  ]
+}
