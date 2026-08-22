@@ -16,20 +16,23 @@
 
 ### 3. Tool Execution (DynamoDB)
 - **DynamoDB Bug Report Table:** 
-  ![DynamoDB Records](bug-report-records.heic)
+  ![DynamoDB Records](bug-report-records.png)
   - *Shows at least one bug report successfully created in DynamoDB via the agent's tool call.*
 
 ### 4. Knowledge Base / Conversational Behavior
 *(Please add screenshots of your terminal/UI chat below demonstrating the following behaviors)*
-- **Covered FAQ Question:** *[Add screenshot showing the agent answering a question from the FAQ]*
-- **Uncovered FAQ Question:** *[Add screenshot showing the agent gracefully handling an FAQ topic that is missing]*
-- **Other-request Behavior:** *[Add screenshot showing the agent handling an out-of-bounds or general request appropriately]*
+- **Covered FAQ Question:** 
+  ![Covered FAQ](covered-faq.png)
+- **Uncovered FAQ Question:** 
+  ![Uncovered FAQ](uncovered-faq.png)
+- **Other-request Behavior:** 
+  ![Other Request](other-faq.png)
 
 ### 5. Evaluation
 - **Evaluation Flow Tests:** [`starter/harness-tests.json`](starter/harness-tests.json)
 - **Generated JSONL Eval Dataset:** [`starter/output_eval_dataset.jsonl`](starter/output_eval_dataset.jsonl)
 - **Bedrock Evaluation Results:**
-  ![Evaluation Results](eval-result.heic)
+  ![Evaluation Results](eval-result.png)
 
 ### Evaluation Observation
 The Bedrock Evaluation job results demonstrate the effectiveness of the `agentcore` setup in correctly routing user intents. The evaluation dataset successfully exercised the three main requirements: bug reporting, FAQ answering, and handling out-of-bounds requests. 
